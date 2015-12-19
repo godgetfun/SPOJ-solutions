@@ -1,0 +1,28 @@
+#include<cstdio>
+#include<cstring>
+#include<iostream>
+using namespace std;
+int main()
+{
+	int t;
+	cin>>t;
+	cin.ignore();
+	while(t--)
+	{
+		int res=0,i,l;
+		char str[202];
+		int a[255]={0};
+		cin>>str;
+		l=strlen(str);
+		for(i=0;i<l;i++)
+		{
+			a[(int)str[i]]++;
+			if(a[(int)str[i]]==2)
+			a[(int)str[i]]=0;
+			if(a[(int)str[i]]==1)
+			res++;
+		}
+		printf("%d\n",res);
+	}
+	return 0;
+}

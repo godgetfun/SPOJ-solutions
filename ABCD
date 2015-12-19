@@ -1,0 +1,47 @@
+#include<cstdio>
+#include<cstring>
+int main()
+{
+	long int n,l,i;
+	scanf("%ld",&n);
+	char a[2*n+1];
+	gets(a);
+	int c[4]={0};
+	l=strlen(a);
+	for(i=0;i<l;i++)
+	{
+		c[(int)(a[i]-65)]++;	
+	}
+	long int k;
+	k=0;
+	i=0;
+	while(1)
+	{
+		lb:
+		fb:
+		if(k==3)
+		k=0;
+		if(c[k]!=n)
+		{
+			if(a[i]!=(char)(c[k]+65))
+			{
+				printf("%c",(char)(c[k]+65));
+				i++;
+				k++;
+			}
+			else
+			{
+				k++;
+				goto lb;
+			}
+		}
+		else
+		{
+			k++;
+			goto fb;
+		}
+		if(i==(l-1))
+		break;		
+	}
+	return 0;
+}
